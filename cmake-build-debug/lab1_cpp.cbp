@@ -102,6 +102,12 @@
 		<Unit filename="/Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.h">
 			<Option target="lab1_cpp"/>
 		</Unit>
+		<Unit filename="/Users/maksim/CLionProjects/lab1_cpp/figures/RegularPolygon.cpp">
+			<Option target="lab1_cpp"/>
+		</Unit>
+		<Unit filename="/Users/maksim/CLionProjects/lab1_cpp/figures/RegularPolygon.h">
+			<Option target="lab1_cpp"/>
+		</Unit>
 		<Unit filename="/Users/maksim/CLionProjects/lab1_cpp/figures/Trapezoid.cpp">
 			<Option target="lab1_cpp"/>
 		</Unit>

@@ -7,32 +7,20 @@
 
 class ClosedPolyLine {
 private:
-    size_t points_amount;
     std::vector<Point> points_sequence;
 public:
     // Default constructor
-    ClosedPolyLine(): points_amount(0), points_sequence() {}
+    ClosedPolyLine() : points_sequence() {}
 
     // Constructor
-    ClosedPolyLine(size_t points_amount, std::vector<Point> points_sequence) {
-        if (points_sequence[0] != points_sequence[points_sequence.size() - 1]) {
-            // TODO: UB
-        }
-        this->points_amount = points_amount;
-        this->points_sequence = std::move(points_sequence);
-    }
-
     ClosedPolyLine(std::vector<Point> points_sequence) {
-        if (points_sequence[0] != points_sequence[points_sequence.size() - 1]) {
-            // TODO: UB
-        }
-        this->points_amount = points_sequence.size();
+        if (!isValid())
+            throw std::invalid_argument("Closed Polyline's first Point has to be equal to the last Point");
         this->points_sequence = std::move(points_sequence);
     }
 
     // Copy constructor
     ClosedPolyLine(const ClosedPolyLine &pl) {
-        this->points_amount = pl.points_amount;
         this->points_sequence = pl.points_sequence;
     }
 
@@ -40,7 +28,6 @@ public:
     ClosedPolyLine &operator=(const ClosedPolyLine &pl) {
         if (this != &pl) {
             this->points_sequence = pl.getPointsSequence();
-            this->points_amount = pl.getPointsAmount();
         }
         return *this;
     }
@@ -54,12 +41,16 @@ public:
         return 0.0;
     }
 
-    size_t getPointsAmount() const {
-        return points_amount;
+    bool isValid() {
+        return points_sequence[0] == points_sequence[points_sequence.size() - 1];
     }
 
     const std::vector<Point> &getPointsSequence() const {
         return points_sequence;
+    }
+
+    void setPointsSequence(const std::vector<Point> &pointsSequence) {
+        points_sequence = pointsSequence;
     }
 };
 

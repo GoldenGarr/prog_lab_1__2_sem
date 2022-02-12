@@ -16,6 +16,16 @@ CMakeFiles/lab1_cpp.dir/figures/Polygon.cpp.o: \
  ../figures/Point.h \
  ../figures/Polygon.cpp \
  ../figures/Polygon.h
+CMakeFiles/lab1_cpp.dir/figures/RegularPolygon.cpp.o: \
+ ../figures/Point.h \
+ ../figures/Polygon.h \
+ ../figures/RegularPolygon.cpp \
+ ../figures/RegularPolygon.h
+CMakeFiles/lab1_cpp.dir/figures/Trapezoid.cpp.o: \
+ ../figures/Point.h \
+ ../figures/Polygon.h \
+ ../figures/Trapezoid.cpp \
+ ../figures/Trapezoid.h
 CMakeFiles/lab1_cpp.dir/figures/Triangle.cpp.o: \
  ../figures/Point.h \
  ../figures/Polygon.h \
@@ -25,6 +35,8 @@ CMakeFiles/lab1_cpp.dir/main.cpp.o: \
  ../figures/Point.h \
  ../figures/PolyLine.h \
  ../figures/Polygon.h \
+ ../figures/RegularPolygon.h \
+ ../figures/Trapezoid.h \
  ../figures/Triangle.h \
  ../main.cpp
 CMakeFiles/lab1_cpp.dir/polynomial/Polynomial.cpp.o: \

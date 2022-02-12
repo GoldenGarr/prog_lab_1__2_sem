@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/maksim/CLionProjects/lab1_cpp/figures/Point.cpp" "/Users/maksim/CLionProjects/lab1_cpp/cmake-build-debug/CMakeFiles/lab1_cpp.dir/figures/Point.cpp.o"
   "/Users/maksim/CLionProjects/lab1_cpp/figures/PolyLine.cpp" "/Users/maksim/CLionProjects/lab1_cpp/cmake-build-debug/CMakeFiles/lab1_cpp.dir/figures/PolyLine.cpp.o"
   "/Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.cpp" "/Users/maksim/CLionProjects/lab1_cpp/cmake-build-debug/CMakeFiles/lab1_cpp.dir/figures/Polygon.cpp.o"
+  "/Users/maksim/CLionProjects/lab1_cpp/figures/RegularPolygon.cpp" "/Users/maksim/CLionProjects/lab1_cpp/cmake-build-debug/CMakeFiles/lab1_cpp.dir/figures/RegularPolygon.cpp.o"
   "/Users/maksim/CLionProjects/lab1_cpp/figures/Trapezoid.cpp" "/Users/maksim/CLionProjects/lab1_cpp/cmake-build-debug/CMakeFiles/lab1_cpp.dir/figures/Trapezoid.cpp.o"
   "/Users/maksim/CLionProjects/lab1_cpp/figures/Triangle.cpp" "/Users/maksim/CLionProjects/lab1_cpp/cmake-build-debug/CMakeFiles/lab1_cpp.dir/figures/Triangle.cpp.o"
   "/Users/maksim/CLionProjects/lab1_cpp/main.cpp" "/Users/maksim/CLionProjects/lab1_cpp/cmake-build-debug/CMakeFiles/lab1_cpp.dir/main.cpp.o"

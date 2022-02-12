@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lab1_cpp.dir/figures/Point.cpp.o"
   "CMakeFiles/lab1_cpp.dir/figures/PolyLine.cpp.o"
   "CMakeFiles/lab1_cpp.dir/figures/Polygon.cpp.o"
+  "CMakeFiles/lab1_cpp.dir/figures/RegularPolygon.cpp.o"
   "CMakeFiles/lab1_cpp.dir/figures/Trapezoid.cpp.o"
   "CMakeFiles/lab1_cpp.dir/figures/Triangle.cpp.o"
   "CMakeFiles/lab1_cpp.dir/main.cpp.o"

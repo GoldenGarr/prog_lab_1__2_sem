@@ -16,6 +16,16 @@ CMakeFiles/lab1_cpp.dir/figures/Polygon.cpp.o
  /Users/maksim/CLionProjects/lab1_cpp/figures/Point.h
  /Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.cpp
  /Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.h
+CMakeFiles/lab1_cpp.dir/figures/RegularPolygon.cpp.o
+ /Users/maksim/CLionProjects/lab1_cpp/figures/Point.h
+ /Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.h
+ /Users/maksim/CLionProjects/lab1_cpp/figures/RegularPolygon.cpp
+ /Users/maksim/CLionProjects/lab1_cpp/figures/RegularPolygon.h
+CMakeFiles/lab1_cpp.dir/figures/Trapezoid.cpp.o
+ /Users/maksim/CLionProjects/lab1_cpp/figures/Point.h
+ /Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.h
+ /Users/maksim/CLionProjects/lab1_cpp/figures/Trapezoid.cpp
+ /Users/maksim/CLionProjects/lab1_cpp/figures/Trapezoid.h
 CMakeFiles/lab1_cpp.dir/figures/Triangle.cpp.o
  /Users/maksim/CLionProjects/lab1_cpp/figures/Point.h
  /Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.h
@@ -25,6 +35,8 @@ CMakeFiles/lab1_cpp.dir/main.cpp.o
  /Users/maksim/CLionProjects/lab1_cpp/figures/Point.h
  /Users/maksim/CLionProjects/lab1_cpp/figures/PolyLine.h
  /Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.h
+ /Users/maksim/CLionProjects/lab1_cpp/figures/RegularPolygon.h
+ /Users/maksim/CLionProjects/lab1_cpp/figures/Trapezoid.h
  /Users/maksim/CLionProjects/lab1_cpp/figures/Triangle.h
  /Users/maksim/CLionProjects/lab1_cpp/main.cpp
 CMakeFiles/lab1_cpp.dir/polynomial/Polynomial.cpp.o

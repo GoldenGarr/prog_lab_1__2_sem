@@ -26,9 +26,19 @@ Point.h
 cmath
 -
 
-/Users/maksim/CLionProjects/lab1_cpp/figures/Triangle.cpp
-Triangle.h
-/Users/maksim/CLionProjects/lab1_cpp/figures/Triangle.h
+/Users/maksim/CLionProjects/lab1_cpp/figures/RegularPolygon.h
+Polygon.h
+/Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.h
+iostream
+-
+utility
+-
+
+/Users/maksim/CLionProjects/lab1_cpp/figures/Trapezoid.h
+utility
+-
+Polygon.h
+/Users/maksim/CLionProjects/lab1_cpp/figures/Polygon.h
 
 /Users/maksim/CLionProjects/lab1_cpp/figures/Triangle.h
 utility
@@ -47,4 +57,8 @@ figures/PolyLine.h
 /Users/maksim/CLionProjects/lab1_cpp/figures/PolyLine.h
 figures/Triangle.h
 /Users/maksim/CLionProjects/lab1_cpp/figures/Triangle.h
+figures/Trapezoid.h
+/Users/maksim/CLionProjects/lab1_cpp/figures/Trapezoid.h
+figures/RegularPolygon.h
+/Users/maksim/CLionProjects/lab1_cpp/figures/RegularPolygon.h
 

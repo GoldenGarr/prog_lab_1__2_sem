@@ -225,6 +225,30 @@ figures/Polygon.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_cpp.dir/build.make CMakeFiles/lab1_cpp.dir/figures/Polygon.cpp.s
 .PHONY : figures/Polygon.cpp.s
 
+figures/RegularPolygon.o: figures/RegularPolygon.cpp.o
+.PHONY : figures/RegularPolygon.o
+
+# target to build an object file
+figures/RegularPolygon.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_cpp.dir/build.make CMakeFiles/lab1_cpp.dir/figures/RegularPolygon.cpp.o
+.PHONY : figures/RegularPolygon.cpp.o
+
+figures/RegularPolygon.i: figures/RegularPolygon.cpp.i
+.PHONY : figures/RegularPolygon.i
+
+# target to preprocess a source file
+figures/RegularPolygon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_cpp.dir/build.make CMakeFiles/lab1_cpp.dir/figures/RegularPolygon.cpp.i
+.PHONY : figures/RegularPolygon.cpp.i
+
+figures/RegularPolygon.s: figures/RegularPolygon.cpp.s
+.PHONY : figures/RegularPolygon.s
+
+# target to generate assembly for a file
+figures/RegularPolygon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_cpp.dir/build.make CMakeFiles/lab1_cpp.dir/figures/RegularPolygon.cpp.s
+.PHONY : figures/RegularPolygon.cpp.s
+
 figures/Trapezoid.o: figures/Trapezoid.cpp.o
 .PHONY : figures/Trapezoid.o
 
@@ -342,6 +366,9 @@ help:
 	@echo "... figures/Polygon.o"
 	@echo "... figures/Polygon.i"
 	@echo "... figures/Polygon.s"
+	@echo "... figures/RegularPolygon.o"
+	@echo "... figures/RegularPolygon.i"
+	@echo "... figures/RegularPolygon.s"
 	@echo "... figures/Trapezoid.o"
 	@echo "... figures/Trapezoid.i"
 	@echo "... figures/Trapezoid.s"
