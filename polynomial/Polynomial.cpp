@@ -187,6 +187,16 @@ public:
         return out;
     }
 
+    double operator[](int index) {
+        int i = 0;
+        while(index > 0) {
+            if (elements[i].getCoefficient() != 0)
+                --index;
+            ++i;
+        }
+        return elements[i].getCoefficient();
+    }
+
     void addPolynomialElement(const PolynomialElement &elem) {
         elements.push_back(elem);
     }
@@ -232,4 +242,5 @@ int main() {
     std::cout << (poly1 == poly2) << "\n";
     std::cout << (poly1 != poly1);
 
+    std::cout << "\n" << poly[1];
 }
