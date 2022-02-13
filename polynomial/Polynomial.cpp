@@ -4,10 +4,12 @@
 
 
 class PolynomialElement {
-private:
+public:
     double coefficient;
     unsigned int power;
 public:
+    PolynomialElement(): coefficient(0), power(0){}
+
     PolynomialElement(double coefficient, unsigned int power) {
         this->coefficient = coefficient;
         this->power = power;
@@ -55,16 +57,6 @@ public:
         this->elements = p.getElements();
     }
 
-    void print() {
-        for (int i = 0; i < elements.size(); ++i) {
-            std::cout << "(" << elements[i].getCoefficient() << "x ** " << elements[i].getPower()
-                      << ")";
-            if (i != elements.size() - 1)
-                std::cout << " + ";
-        }
-        std::cout << std::endl;
-    }
-
     Polynomial &operator=(const Polynomial &p) {
         if (this != &p) {
             this->polynomial_power = p.getPolynomialPower();
@@ -74,18 +66,11 @@ public:
     }
 
     bool operator==(const Polynomial &p) {
-//        for (int i = 0; i < this->polynomial_power; i++) {
-//            if (this->elements[i].getCoefficient() == 0) {
-//                for (int j = 0; j < p.getPolynomialPower(); j++) {
-//                    if (p.getElements()[j].getPower() == this->elements[i].getPower()
-//                        && p.getElements()[j].getCoefficient() != 0) {
-//                        return false;
-//                    }
-//                }
-//            } else {
-//
-//            }
-//        }
+        Polynomial diff = *this - p;
+        for (auto & element : diff.elements) {
+            if (element.getCoefficient() != 0)
+                return false;
+        }
         return true;
     }
 
@@ -182,6 +167,30 @@ public:
         return *this;
     }
 
+    friend std::istream &operator>>(std::istream &in, Polynomial &p) {
+        int elements_number;
+        in >> elements_number;
+        while (elements_number > 0) {
+            PolynomialElement elem;
+            in >> elem.coefficient;
+            in >> elem.power;
+            p.elements.push_back(elem);
+            --elements_number;
+        }
+        return in;
+    }
+
+    friend std::ostream &operator<<(std::ostream &out, const Polynomial &p) {
+        for (int i = 0; i < p.elements.size(); ++i) {
+            out << "(" << p.elements[i].getCoefficient() << "x ** " << p.elements[i].getPower()
+                      << ")";
+            if (i != p.elements.size() - 1)
+                out << " + ";
+        }
+        out << "\n";
+        return out;
+    }
+
     void addPolynomialElement(const PolynomialElement &elem) {
         elements.push_back(elem);
     }
@@ -207,7 +216,7 @@ int main() {
     poly1.addPolynomialElement(p3);
     poly1.addPolynomialElement(p4);
 
-    poly1.print();
+    std::cout << poly1;
 
     PolynomialElement p12(1, 3);
     PolynomialElement p22(3, 2);
@@ -220,8 +229,15 @@ int main() {
 
     // poly2 += poly1;
     poly2 = poly2 / 100;
-    poly2.print();
+    std::cout << poly2;
     Polynomial polySum = poly1 + poly2;
 
-    polySum.print();
+    std::cout << polySum;
+
+//    Polynomial poly3;
+//    std::cin >> poly3;
+//    std::cout << poly3;
+    std::cout << (poly1 == poly2) << "\n";
+    std::cout << (poly1 != poly1);
+
 }
