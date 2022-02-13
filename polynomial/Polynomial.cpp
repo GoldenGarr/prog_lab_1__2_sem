@@ -40,26 +40,22 @@ public:
 class Polynomial {
 private:
     std::vector<PolynomialElement> elements;
-    unsigned int polynomial_power;
 public:
-    Polynomial() : elements(), polynomial_power(0) {
+    Polynomial() : elements(){
     }
 
     ~Polynomial() = default;
 
     Polynomial(std::vector<PolynomialElement> elements) {
-        this->polynomial_power = elements.size();
         this->elements = std::move(elements);
     }
 
     Polynomial(const Polynomial &p) {
-        this->polynomial_power = p.getPolynomialPower();
         this->elements = p.getElements();
     }
 
     Polynomial &operator=(const Polynomial &p) {
         if (this != &p) {
-            this->polynomial_power = p.getPolynomialPower();
             this->elements = p.getElements();
         }
         return *this;
@@ -197,10 +193,6 @@ public:
 
     const std::vector<PolynomialElement> &getElements() const {
         return elements;
-    }
-
-    size_t getPolynomialPower() const {
-        return polynomial_power;
     }
 };
 
