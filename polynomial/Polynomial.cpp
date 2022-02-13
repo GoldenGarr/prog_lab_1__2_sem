@@ -13,6 +13,19 @@ public:
         this->power = power;
     }
 
+    PolynomialElement operator+(const PolynomialElement &pe) const {
+        return {this->getCoefficient() + pe.getCoefficient(),
+                this->getPower()};
+    }
+
+    void invertCoefficient() {
+        coefficient = -coefficient;
+    }
+
+    void multiplyCoefficient(double multiplier) {
+        coefficient *= multiplier;
+    }
+
     double getCoefficient() const {
         return coefficient;
     }
@@ -73,7 +86,7 @@ public:
 //
 //            }
 //        }
-return true;
+        return true;
     }
 
     bool operator!=(const Polynomial &p) {
@@ -86,21 +99,87 @@ return true;
         Polynomial sum;
         while (true) {
             if (elements[i].getPower() == p.elements[j].getPower()) {
-                PolynomialElement element(elements[i].getCoefficient() + p.elements[i].getCoefficient(),
-                                          elements[i].getPower());
+                PolynomialElement element = elements[i] + p.elements[j];
                 sum.addPolynomialElement(element);
                 ++i;
                 ++j;
+            } else if (elements[i].getPower() > p.elements[j].getPower()) {
+                sum.addPolynomialElement(elements[i]);
+                ++i;
+            } else {
+                sum.addPolynomialElement(p.getElements()[j]);
+                ++j;
             }
 
-            if (i > getElements().size()) {
+            if (i >= getElements().size()) {
+                while (j < p.getElements().size()) {
+                    sum.addPolynomialElement(p.getElements()[j]);
+                    ++j;
+                }
                 break;
             }
-            if (j > p.getElements().size()) {
+            if (j >= p.getElements().size()) {
+                while (i < elements.size()) {
+                    sum.addPolynomialElement(elements[i]);
+                    ++i;
+                }
                 break;
             }
         }
-        return Polynomial();
+        return sum;
+    }
+
+    // Unary
+    Polynomial operator-() {
+        Polynomial inverted = *this;
+        for (int i = 0; i < elements.size(); ++i) {
+            inverted.elements[i].invertCoefficient();
+        }
+        return inverted;
+    }
+
+    // Binary
+    Polynomial operator-(const Polynomial &p) {
+        Polynomial p_copy = p;
+        p_copy = -p_copy;
+        Polynomial diff = *this + p_copy;
+        return diff;
+    }
+
+    Polynomial operator+=(const Polynomial &p) {
+        *this = *this + p;
+        return *this;
+    }
+
+    Polynomial operator-=(const Polynomial &p) {
+        *this = *this - p;
+        return *this;
+    }
+
+    Polynomial operator*(double multiplier) {
+        Polynomial p_copy = *this;
+        for (int i = 0; i < p_copy.elements.size(); ++i) {
+            p_copy.elements[i].multiplyCoefficient(multiplier);
+        }
+        return p_copy;
+    }
+
+    Polynomial operator/(double divider) {
+        Polynomial p_copy = *this;
+        for (int i = 0; i < p_copy.elements.size(); ++i) {
+            p_copy.elements[i].multiplyCoefficient(1.0 / divider);
+        }
+        return p_copy;
+    }
+
+    Polynomial operator*=(double multiplier) {
+        *this = *this * multiplier;
+        return *this;
+    }
+
+    Polynomial operator/=(double divider) {
+        *this = *this / divider;
+        return *this;
     }
 
     void addPolynomialElement(const PolynomialElement &elem) {
@@ -122,11 +201,27 @@ int main() {
     PolynomialElement p3(-3, 1);
     PolynomialElement p4(4, 0);
 
-    Polynomial polynomial;
-    polynomial.addPolynomialElement(p1);
-    polynomial.addPolynomialElement(p2);
-    polynomial.addPolynomialElement(p3);
-    polynomial.addPolynomialElement(p4);
+    Polynomial poly1;
+    poly1.addPolynomialElement(p1);
+    poly1.addPolynomialElement(p2);
+    poly1.addPolynomialElement(p3);
+    poly1.addPolynomialElement(p4);
 
-    polynomial.print();
+    poly1.print();
+
+    PolynomialElement p12(1, 3);
+    PolynomialElement p22(3, 2);
+    PolynomialElement p32(20, 0);
+
+    Polynomial poly2;
+    poly2.addPolynomialElement(p12);
+    poly2.addPolynomialElement(p22);
+    poly2.addPolynomialElement(p32);
+
+    // poly2 += poly1;
+    poly2 = poly2 / 100;
+    poly2.print();
+    Polynomial polySum = poly1 + poly2;
+
+    polySum.print();
 }
