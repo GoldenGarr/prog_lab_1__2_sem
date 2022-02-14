@@ -15,14 +15,10 @@ public:
     PolyLine() : points_sequence() {}
 
     // Constructor
-    PolyLine(std::vector<Point> points_sequence) {
-        this->points_sequence = std::move(points_sequence);
-    }
+    PolyLine(std::vector<Point> points_sequence) : points_sequence(std::move(points_sequence)) {}
 
     // Copy constructor
-    PolyLine(const PolyLine &pl) {
-        this->points_sequence = pl.points_sequence;
-    }
+    PolyLine(const PolyLine &pl) : points_sequence(pl.points_sequence) {}
 
     // Assignment operator
     PolyLine &operator=(const PolyLine &pl) {
@@ -32,21 +28,8 @@ public:
         return *this;
     }
 
-    // Considering the polyline to be non-self-intersecting
-    float getPerimeter() {
-        return 0.0;
-    }
-
-    float getSpace() {
-        return 0.0;
-    }
-
     const std::vector<Point> &getPointsSequence() const {
         return points_sequence;
-    }
-
-    void setPointsSequence(const std::vector<Point> &pointsSequence) {
-        points_sequence = pointsSequence;
     }
 };
 

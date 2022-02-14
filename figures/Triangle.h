@@ -7,7 +7,6 @@
 
 class Triangle : public Polygon {
 public:
-    // TODO:
     Triangle() : Polygon() {}
 
     Triangle(const Point& p1, const Point& p2, const Point& p3) {

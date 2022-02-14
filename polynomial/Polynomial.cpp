@@ -8,16 +8,15 @@ public:
     double coefficient;
     unsigned int power;
 public:
-    PolynomialElement(): coefficient(0), power(0){}
+    PolynomialElement() : coefficient(0), power(0) {}
 
-    PolynomialElement(double coefficient, unsigned int power) {
-        this->coefficient = coefficient;
-        this->power = power;
-    }
+    explicit PolynomialElement(double coefficient, unsigned int power)
+            : coefficient(coefficient), power(power) {}
 
     PolynomialElement operator+(const PolynomialElement &pe) const {
-        return {this->getCoefficient() + pe.getCoefficient(),
-                this->getPower()};
+        PolynomialElement elem(this->getCoefficient() + pe.getCoefficient(),
+                               this->getPower());
+        return elem;
     }
 
     void invertCoefficient() {
@@ -41,14 +40,13 @@ class Polynomial {
 private:
     std::vector<PolynomialElement> elements;
 public:
-    Polynomial() : elements(){
+    Polynomial() : elements() {
     }
 
     ~Polynomial() = default;
 
-    Polynomial(std::vector<PolynomialElement> elements) {
-        this->elements = std::move(elements);
-    }
+    explicit Polynomial(std::vector<PolynomialElement> elements) :
+            elements(std::move(elements)) {}
 
     Polynomial(const Polynomial &p) {
         this->elements = p.getElements();
@@ -63,7 +61,7 @@ public:
 
     bool operator==(const Polynomial &p) {
         Polynomial diff = *this - p;
-        for (auto & element : diff.elements) {
+        for (auto &element: diff.elements) {
             if (element.getCoefficient() != 0)
                 return false;
         }
@@ -179,7 +177,7 @@ public:
     friend std::ostream &operator<<(std::ostream &out, const Polynomial &p) {
         for (int i = 0; i < p.elements.size(); ++i) {
             out << "(" << p.elements[i].getCoefficient() << "x ** " << p.elements[i].getPower()
-                      << ")";
+                << ")";
             if (i != p.elements.size() - 1)
                 out << " + ";
         }
@@ -189,7 +187,7 @@ public:
 
     double operator[](int index) {
         int i = 0;
-        while(index > 0) {
+        while (index > 0) {
             if (elements[i].getCoefficient() != 0)
                 --index;
             ++i;
@@ -206,6 +204,7 @@ public:
     }
 };
 
+/*
 int main() {
     PolynomialElement p1(1, 3);
     PolynomialElement p2(2, 2);
@@ -242,5 +241,7 @@ int main() {
     std::cout << (poly1 == poly2) << "\n";
     std::cout << (poly1 != poly1);
 
-    std::cout << "\n" << poly[1];
+    std::cout << "\n" << poly1[1];
+
 }
+*/

@@ -14,16 +14,10 @@ public:
     }
 
     // Constructor
-    Point(double x, double y) {
-        this->x = x;
-        this->y = y;
-    }
+    Point(double x, double y) : x(x), y(y) {}
 
     // Copy constructor
-    Point(const Point &p) {
-        x = p.x;
-        y = p.y;
-    }
+    Point(const Point &p) : x(p.x), y(p.y) {}
 
     // Assignment operator
     Point &operator=(const Point &p) {
@@ -35,21 +29,12 @@ public:
     }
 
     // IsEqual operator
-    bool operator==(const Point &p1) const  {
+    bool operator==(const Point &p1) const {
         return (this->x == p1.getX()) && (this->y == p1.getY());
     }
 
-    bool operator!=(const Point &p1) const  {
+    bool operator!=(const Point &p1) const {
         return !((this->x == p1.getX()) && (this->y == p1.getY()));
-    }
-
-    // Kekis functions
-    float getPerimeter() {
-        return 0.0;
-    }
-
-    float getSpace() {
-        return 0.0;
     }
 
     double getX() const {
